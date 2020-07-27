@@ -14,8 +14,8 @@ function Navbar(props) {
         </>
       )) || (
         <>
-          <Link to='/login'>Login</Link>
-          <Link to='/register'>Register</Link>
+          <Link to='/authentication/login'>Login</Link>
+          <Link to='/authentication/register'>Register</Link>
         </>
       )}
     </nav>

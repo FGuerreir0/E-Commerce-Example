@@ -17,6 +17,7 @@ const login = (body) => {
 };
 
 const register = (body) => {
+  console.log('Estou no service', body);
   return baseAuthenticationService
     .post('/register', body)
 

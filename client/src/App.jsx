@@ -46,8 +46,16 @@ class App extends Component {
           <Navbar user={this.state.user} />
 
           <Switch>
-            <Route exact path='/register' render={(props) => <RegisterView {...props} />} />
-            <Route exact path='/login' render={(props) => <LoginView {...props} />} />
+            <Route
+              exact
+              path='/authentication/register'
+              render={(props) => <RegisterView {...props} />}
+            />
+            <Route
+              exact
+              path='/authentication/login'
+              render={(props) => <LoginView {...props} />}
+            />
           </Switch>
         </BrowserRouter>
       </div>

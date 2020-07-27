@@ -8,13 +8,14 @@ const User = require('./../models/user');
 const router = new Router();
 
 router.post('/register', (req, res, next) => {
-  const { name, email, password } = req.body;
-  console.log(name);
+  console.log(req.body);
+  const { username, email, password } = req.body;
+  console.log({ username, email, password });
   bcryptjs
     .hash(password, 10)
     .then((hash) => {
       return User.create({
-        name,
+        username,
         email,
         passwordHash: hash
       });

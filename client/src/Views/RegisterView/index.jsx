@@ -13,7 +13,6 @@ class Register extends Component {
   submithandler = (event) => {
     event.preventDefault();
     const { username, email, password } = this.state;
-    console.log(username, email, password);
 
     register({ username, email, password })
       .then((user) => {
@@ -29,7 +28,6 @@ class Register extends Component {
     this.setState({
       [name]: value
     });
-    console.log(this.state.username);
   };
 
   render() {

@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { logout } from './../../Services/authentication';
 
-function Navbar(props) {
-  console.log(props);
+const Navbar = (props) => {
+  const logoutEvent = () => {
+    logout()
+      .then(() => {
+        props.updateUser(null);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <nav>
       <label>hamburger</label>
@@ -10,7 +20,7 @@ function Navbar(props) {
 
       {(props.user && (
         <>
-          <p>login feito</p>{' '}
+          <button onClick={logoutEvent}>Logout</button>
         </>
       )) || (
         <>
@@ -20,6 +30,6 @@ function Navbar(props) {
       )}
     </nav>
   );
-}
+};
 
 export default Navbar;

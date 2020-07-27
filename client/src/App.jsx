@@ -9,6 +9,7 @@ import { loadAuthenticatedUser } from './Services/authentication';
 import Navbar from './Components/Navbar';
 
 //VIEWS
+import Home from './Views/Home';
 import LoginView from './Views/LoginView';
 import RegisterView from './Views/RegisterView';
 
@@ -20,7 +21,7 @@ class App extends Component {
       user: null
     };
   }
-  /*
+
   componentDidMount() {
     loadAuthenticatedUser()
       .then((user) => {
@@ -35,26 +36,27 @@ class App extends Component {
   }
 
   updateUser = (user) => {
-    this.setState(null);
+    this.setState({ user });
   };
-*/
 
   render() {
     return (
       <div className='App'>
         <BrowserRouter>
-          <Navbar user={this.state.user} />
+          <Navbar user={this.state.user} updateUser={this.updateUser} />
 
           <Switch>
+            <Route exact path='/' render={(props) => <Home {...props} />} />
+
             <Route
               exact
               path='/authentication/register'
-              render={(props) => <RegisterView {...props} />}
+              render={(props) => <RegisterView {...props} updateUser={this.updateUser} />}
             />
             <Route
               exact
               path='/authentication/login'
-              render={(props) => <LoginView {...props} />}
+              render={(props) => <LoginView {...props} updateUser={this.updateUser} />}
             />
           </Switch>
         </BrowserRouter>

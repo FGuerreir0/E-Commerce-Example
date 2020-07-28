@@ -17,7 +17,13 @@ const schema = new mongoose.Schema({
   passwordHash: {
     type: String,
     required: true
-  }
+  },
+  category: {
+    type: String,
+    default: 'client',
+    required: true
+  },
+  address: {}
 });
 
 module.exports = mongoose.model('User', schema);

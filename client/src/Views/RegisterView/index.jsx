@@ -5,16 +5,16 @@ class Register extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: '',
+      name: '',
       password: '',
       email: ''
     };
   }
   submithandler = (event) => {
     event.preventDefault();
-    const { username, email, password } = this.state;
+    const { name, email, password } = this.state;
 
-    register({ username, email, password })
+    register({ name, email, password })
       .then((user) => {
         this.props.updateUser(user);
         this.props.history.push('/');
@@ -35,14 +35,14 @@ class Register extends Component {
       <div style={{ marginTop: '70px' }}>
         <h3>Register</h3>
         <form onSubmit={this.submithandler}>
-          <label htmlFor='username'>Username</label>
+          <label htmlFor='name'>Name</label>
           <input
-            id='username'
-            name='username'
+            id='name'
+            name='name'
             type='text'
             onChange={this.handleInputChange}
-            placeholder='Insert username here'
-            value={this.state.username}
+            placeholder='Insert name here'
+            value={this.state.name}
             required
           />
           <label htmlFor='email'>Email</label>

@@ -3,7 +3,7 @@
 const mongoose = require('mongoose');
 
 const schema = new mongoose.Schema({
-  username: {
+  name: {
     type: String,
     trim: true
   },
@@ -22,8 +22,7 @@ const schema = new mongoose.Schema({
     type: String,
     default: 'client',
     required: true
-  },
-  address: {}
+  }
 });
 
 module.exports = mongoose.model('User', schema);

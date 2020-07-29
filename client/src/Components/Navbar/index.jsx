@@ -17,7 +17,7 @@ const Navbar = (props) => {
   return (
     <>
       <header>
-        <div className='logo'>Pipe.fy</div>
+        <div className='logo'>Pipe.Fy</div>
         <nav>
           <ul>
             <li>
@@ -43,7 +43,11 @@ const Navbar = (props) => {
             {(props.user && (
               <>
                 <li>
-                  <button onClick={logoutEvent}>Logout</button>
+                  <div className='nav_logout'>
+                    <Link to='/' onClick={logoutEvent}>
+                      Logout
+                    </Link>
+                  </div>
                 </li>
               </>
             )) || (
@@ -88,7 +92,11 @@ const Navbar = (props) => {
               {(props.user && (
                 <>
                   <li>
-                    <button onClick={logoutEvent}>Logout</button>
+                    <div className='nav_logout'>
+                      <Link to='/' onClick={logoutEvent}>
+                        Logout
+                      </Link>
+                    </div>
                   </li>
                 </>
               )) || (

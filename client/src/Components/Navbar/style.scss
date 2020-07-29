@@ -1,0 +1,146 @@
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 6px 100px;
+  background: #1b1b1b;
+  width: 100%;
+  box-sizing: border-box;
+}
+.logo {
+  float: left;
+  color: white;
+  font-size: 27px;
+  font-weight: 600;
+  line-height: 70px;
+  padding-left: 20px;
+  height: 50px;
+  margin-top: -10px;
+}
+
+header nav {
+  float: right;
+}
+
+header nav ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+
+  margin-right: 80px;
+}
+
+header nav ul li {
+  list-style: none;
+}
+
+header nav ul li a {
+  color: #fff;
+  height: 50px;
+  font-size: 18px;
+  line-height: 50px;
+  padding: 0px 20px;
+  text-decoration: none;
+  display: block;
+}
+
+header nav ul li a:hover {
+  color: cyan;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #33ffff, 0 0 10px #66ffff;
+}
+
+.menu-toggle {
+  color: #fff;
+  float: right;
+  line-height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+}
+
+.menu-toggle:hover {
+  color: cyan;
+  border-radius: 5px;
+}
+
+label {
+  cursor: pointer;
+}
+
+#toggle {
+  display: none;
+}
+
+.nav_basket {
+  position: absolute;
+  color: #fff;
+  height: 50px;
+  font-size: 20px;
+  line-height: 50px;
+  text-decoration: none;
+  display: block;
+  right: 7%;
+}
+
+.nav_basket:hover {
+  color: #33ffff;
+  font-size: 25px;
+  transition: all 0.8s;
+}
+
+.nav_basket_phone {
+  position: absolute;
+  color: #fff;
+  height: 50px;
+  font-size: 24px;
+  line-height: 50px;
+  text-decoration: none;
+  display: block;
+  right: 90px;
+  float: right;
+  cursor: pointer;
+}
+
+.nav_basket_phone:hover {
+  color: #33ffff;
+  font-size: 25px;
+  transition: all 0.8s;
+}
+
+@media (max-width: 991px) {
+  header {
+    padding: 0 20px;
+  }
+  .menu-toggle {
+    display: block;
+    padding-right: 20px;
+  }
+  header nav {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - 50px);
+    background-color: #1b1b1b;
+    top: 50px;
+    left: 100%;
+    z-index: -2;
+    opacity: 0;
+    transition: all 0.4s;
+  }
+
+  header nav ul {
+    padding-left: 3px;
+    display: block;
+    text-align: left;
+  }
+  header nav ul li a {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  #toggle:checked ~ nav {
+    display: block;
+    left: 80%;
+    opacity: 1;
+    z-index: 1;
+  }
+}

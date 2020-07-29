@@ -1,10 +1,14 @@
 import React from 'react';
+import Jumbotron from './../../Components/Jumbotron';
 
 function Home(props) {
   console.log(props);
   return (
     <div>
-      <h1>Home</h1>
+      <Jumbotron />
+      <div className='home_view'>
+        <h1>Home</h1>
+      </div>
     </div>
   );
 }

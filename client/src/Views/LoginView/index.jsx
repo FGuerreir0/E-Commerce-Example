@@ -44,6 +44,7 @@ export default class Login extends Component {
             placeholder='Insert a valid email'
             value={this.state.email}
             required
+            style={{ width: '100px', border: '1 solid black' }}
           />
           <label htmlFor='password'>Password</label>
           <input

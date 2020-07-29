@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import './style.css';
+import './style.scss';
 import { logout } from './../../Services/authentication';
 
 const Navbar = (props) => {
@@ -17,7 +17,7 @@ const Navbar = (props) => {
   return (
     <>
       <header>
-        <div className='logo'>Logo</div>
+        <div className='logo'>Pipe.fy</div>
         <nav>
           <ul>
             <li>
@@ -34,6 +34,11 @@ const Navbar = (props) => {
             <li>
               <Link to='/'>Clothes</Link>
             </li>
+            <li>
+              {/* <div className='nav_basket'>
+                <i class='fas fa-shopping-cart'></i>
+  </div>*/}
+            </li>
 
             {(props.user && (
               <>
@@ -49,12 +54,19 @@ const Navbar = (props) => {
                 <li>
                   <Link to='/authentication/register'>Register</Link>
                 </li>
+                <li></li>
               </>
             )}
           </ul>
         </nav>
+        {props.user && (
+          <div className='nav_basket_phone'>
+            <label>(0)</label>
+            <i class='fas fa-shopping-cart'></i>
+          </div>
+        )}
         <div className='menu-toggle'>
-          <label for='toggle' class='fas fa-bars'></label>
+          <label htmlFor='toggle' className='fas fa-bars'></label>
           <input type='checkbox' id='toggle' />
           <nav>
             <ul>

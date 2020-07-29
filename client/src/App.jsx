@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
-import './App.css';
+import './App.scss';
 
 //SERVICES
 import { loadAuthenticatedUser } from './Services/authentication';
@@ -44,21 +44,22 @@ class App extends Component {
       <div className='App'>
         <BrowserRouter>
           <Navbar user={this.state.user} updateUser={this.updateUser} />
+          <div className='component'>
+            <Switch>
+              <Route exact path='/' render={(props) => <Home {...props} />} />
 
-          <Switch>
-            <Route exact path='/' render={(props) => <Home {...props} />} />
-
-            <Route
-              exact
-              path='/authentication/register'
-              render={(props) => <RegisterView {...props} updateUser={this.updateUser} />}
-            />
-            <Route
-              exact
-              path='/authentication/login'
-              render={(props) => <LoginView {...props} updateUser={this.updateUser} />}
-            />
-          </Switch>
+              <Route
+                exact
+                path='/authentication/register'
+                render={(props) => <RegisterView {...props} updateUser={this.updateUser} />}
+              />
+              <Route
+                exact
+                path='/authentication/login'
+                render={(props) => <LoginView {...props} updateUser={this.updateUser} />}
+              />
+            </Switch>
+          </div>
         </BrowserRouter>
       </div>
     );

@@ -32,7 +32,7 @@ class Register extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{ marginTop: '70px' }}>
         <h3>Register</h3>
         <form onSubmit={this.submithandler}>
           <label htmlFor='username'>Username</label>

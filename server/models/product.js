@@ -1,13 +1,16 @@
 const mongoose = require('mongoose');
 
 const schema = new mongoose.Schema({
-  name: { type: String },
-  photo: { type: String },
-  category: { type: String },
+  name: { type: String, required: true },
+  brand: { type: String, required: true },
+  photo: { type: String, required: true },
+  category: { type: String, required: true },
+  subCategory: { type: String, required: true },
   price: {
-    amount: { type: Number },
+    amount: { type: Number, required: true },
     currency: {
       type: String,
+      required: true,
       default: '€'
     }
   }

@@ -20,19 +20,60 @@ const Navbar = (props) => {
         <div className='logo'>Pipe.Fy</div>
         <nav>
           <ul>
-            <li>
-              <Link to='/'>Water</Link>
+            <li className='dropdown'>
+              <Link to='' className='dropbtn'>
+                Surf
+              </Link>
+              <div className='dropdown-content'>
+                <Link to='/'>Boards</Link>
+                <Link to='/'>Fins</Link>
+                <Link to='/'>Wax</Link>
+                <Link to='/'>Accessories</Link>
+              </div>
             </li>
-
-            <li>
-              <Link to='/'>Snow</Link>
+            <li className='dropdown'>
+              <Link to='' className='dropbtn'>
+                Bodyboard
+              </Link>
+              <div className='dropdown-content'>
+                <Link to='/'>Boards</Link>
+                <Link to='/'>Accessories</Link>
+              </div>
             </li>
-
-            <li>
-              <Link to='/'>Skate</Link>
+            <li className='dropdown'>
+              <Link to='' className='dropbtn'>
+                Stand-up
+              </Link>
+              <div className='dropdown-content'>
+                <Link to='/'>Inflatable Sup</Link>
+                <Link to='/'>Hard Boards</Link>
+                <Link to='/'>Paddles</Link>
+                <Link to='/'>Accessories</Link>
+                <Link to='/'>Clothing</Link>
+              </div>
             </li>
-            <li>
-              <Link to='/'>Clothes</Link>
+            <li className='dropdown'>
+              <Link to='' className='dropbtn'>
+                Skate
+              </Link>
+              <div className='dropdown-content'>
+                <Link to='/'>Skateboards</Link>
+                <Link to='/'>Decks</Link>
+                <Link to='/'>Wheels</Link>
+                <Link to='/'>Trucks</Link>
+                <Link to='/'>Grip Tape</Link>
+                <Link to='/'>Accessories</Link>
+              </div>
+            </li>
+            <li className='dropdown'>
+              <Link to='' className='dropbtn'>
+                Wetsuits
+              </Link>
+              <div className='dropdown-content'>
+                <Link to='/'>Man</Link>
+                <Link to='/'>Woman</Link>
+                <Link to='/'>Junior</Link>
+              </div>
             </li>
             <li>
               {/* <div className='nav_basket'>
@@ -42,6 +83,9 @@ const Navbar = (props) => {
 
             {(props.user && (
               <>
+                <li className='nav_separator'>
+                  <Link className='nav_separator'>|</Link>
+                </li>
                 <li>
                   <div className='nav_logout'>
                     <Link to='/' onClick={logoutEvent}>
@@ -52,6 +96,9 @@ const Navbar = (props) => {
               </>
             )) || (
               <>
+                <li className='nav_separator'>
+                  <Link className='nav_separator'>|</Link>
+                </li>
                 <li>
                   <Link to='/authentication/login'>Login</Link>
                 </li>

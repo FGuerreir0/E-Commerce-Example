@@ -7,6 +7,44 @@ header {
   width: 100%;
   box-sizing: border-box;
 }
+
+.nav_separator {
+  color: rgba($color: #fff, $alpha: 0.3);
+  font-size: 30px;
+}
+.nav_separator :hover {
+  color: rgba($color: #fff, $alpha: 0.3);
+  border-radius: 0;
+  box-shadow: 0 0 0 #1b1b1b;
+  cursor: default;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #1b1b1b;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 0;
+  padding: 10px 10px;
+  margin-top: 5px;
+  border-radius: 0 0 5px 5px;
+}
+
+.dropdown-content a {
+  color: #fff;
+  height: 50px;
+  font-size: 18px;
+  line-height: 50px;
+  padding: 0px 20px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
 .logo {
   float: left;
   color: white;

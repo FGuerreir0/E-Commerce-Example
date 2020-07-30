@@ -10,8 +10,12 @@ const logger = require('morgan');
 const mongoose = require('mongoose');
 const serveFavicon = require('serve-favicon');
 const basicAuthenticationDeserializer = require('./middleware/basic-authentication-deserializer.js');
+
+//ROUTES
 const indexRouter = require('./routes/index');
 const authenticationRouter = require('./routes/authentication');
+const products = require('./routes/products');
+//----------------------------
 
 const app = express();
 
@@ -39,6 +43,7 @@ app.use(basicAuthenticationDeserializer);
 
 app.use('/', indexRouter);
 app.use('/authentication', authenticationRouter);
+app.use('/products', products);
 
 // Catch missing routes and forward to error handler
 app.use((req, res, next) => {

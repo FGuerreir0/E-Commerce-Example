@@ -4,7 +4,7 @@ import './style.scss';
 
 function Jumbotron() {
   return (
-    <div>
+    <div className='jumbotron'>
       <div className='jumbotron_news'>
         <small>Free Shipping for Europe now!</small>
       </div>

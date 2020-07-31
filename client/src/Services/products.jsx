@@ -6,9 +6,9 @@ const baseProjectService = axios.create({
 
 const getAll = () => {
   return baseProjectService
-    .get('/list')
+    .get('/all')
     .then((result) => {
-      const products = result.data.projects;
+      const products = result.data.products;
       return Promise.resolve(products);
     })
     .catch((err) => {

@@ -1,4 +1,4 @@
-const Product = require('./../models/product.js');
+const Product = require('../models/products.js');
 const mongoose = require('mongoose');
 require('dotenv').config();
 const URI = process.env.MONGODB_URI;

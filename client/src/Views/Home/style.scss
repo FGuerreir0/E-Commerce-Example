@@ -1,5 +1,32 @@
+$break-large: 1024px;
+$break-medium: 760px;
+
 .home_view {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 10%;
+}
+
+@media screen and (min-width: $break-large) {
+  .list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-count: 3;
+  }
+}
+
+@media screen and (min-width: $break-medium) {
+  .list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-count: 2;
+  }
 }

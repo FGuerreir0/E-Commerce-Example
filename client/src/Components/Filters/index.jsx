@@ -31,7 +31,7 @@ export default function Filters() {
       <div className='searchBar'>
         <input style={{ border: 'none' }}></input>
         <i
-          class='fas fa-search'
+          className='fas fa-search'
           style={{
             backgroundColor: 'white'
           }}

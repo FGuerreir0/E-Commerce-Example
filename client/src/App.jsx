@@ -18,7 +18,8 @@ class App extends Component {
     super();
     this.state = {
       loaded: false,
-      user: null
+      user: null,
+      view: 'getAll'
     };
   }
 
@@ -39,7 +40,12 @@ class App extends Component {
     this.setState({ user });
   };
 
+  updateView = (search) => {
+    this.setState({ view: search });
+  };
+
   render() {
+    console.log(this.state.view);
     return (
       <div className='App'>
         <BrowserRouter>
@@ -58,6 +64,8 @@ class App extends Component {
                 path='/authentication/login'
                 render={(props) => <LoginView {...props} updateUser={this.updateUser} />}
               />
+
+              {/* Products Routes*/}
             </Switch>
           </div>
         </BrowserRouter>

@@ -14,6 +14,10 @@ const Navbar = (props) => {
       });
   };
 
+  const changeView = () => {
+    console.log('click');
+  };
+
   return (
     <>
       <header>
@@ -25,7 +29,9 @@ const Navbar = (props) => {
                 Surf
               </Link>
               <div className='dropdown-content'>
-                <Link to='/'>Boards</Link>
+                <Link to='/' onClick={changeView}>
+                  Boards
+                </Link>
                 <Link to='/'>Fins</Link>
                 <Link to='/'>Wax</Link>
                 <Link to='/'>Accessories</Link>
@@ -113,7 +119,7 @@ const Navbar = (props) => {
         {props.user && (
           <div className='nav_basket_phone'>
             <label>(0)</label>
-            <i class='fas fa-shopping-cart'></i>
+            <i className='fas fa-shopping-cart'></i>
           </div>
         )}
         <div className='menu-toggle'>

@@ -38,12 +38,37 @@ class Home extends Component {
         <Jumbotron />
         <div className='home_view'>
           <Filters />
-          <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <div className='list'>
             {(products.length > 0 &&
               products.map((product) => (
-                <div style={{ border: '1px solid black', display: 'flex', flexDirection: 'row' }}>
-                  <img src={product.photo} style={{ height: '250px' }} />
-                  <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <div
+                  key={product._id}
+                  style={{
+                    border: '1px solid gray',
+                    width: '300px',
+                    margin: ' 20px 20px',
+                    textAlign: 'center',
+                    backgroundColor: '#fff'
+                  }}
+                >
+                  <img
+                    src={product.photo}
+                    alt=''
+                    style={{ height: '250px', marginBottom: '5px' }}
+                  />
+                  <div
+                    style={{
+                      display: 'flex',
+                      flexDirection: 'column',
+                      backgroundColor: 'black',
+                      color: '#fff',
+                      padding: '10px 0',
+                      zIndex: '-1',
+                      opacity: '0.5',
+                      borderTopLeftRadius: '10px',
+                      borderTopRightRadius: '10px'
+                    }}
+                  >
                     <p>{product.name}</p>
                     <p>
                       Price: {product.price.amount / 100}

@@ -14,8 +14,83 @@ const Navbar = (props) => {
       });
   };
 
-  const changeView = () => {
-    console.log('click');
+  //SURF HANDLERS
+  const changeViewSurfBoards = () => {
+    props.updateView('Surf', 'Board');
+  };
+
+  const changeViewSurfFins = () => {
+    props.updateView('Surf', 'Fins');
+  };
+
+  const changeViewSurfWax = () => {
+    props.updateView('Surf', 'Wax');
+  };
+
+  const changeViewSurfAccessories = () => {
+    props.updateView('Surf', 'Accessories');
+  };
+
+  //BODYBOARD HANDLERS
+  const changeViewBodyboardBoards = () => {
+    props.updateView('Bodyboard', 'Board');
+  };
+
+  const changeViewBodyboardAccessories = () => {
+    props.updateView('Bodyboard', 'Accessories');
+  };
+  //STANDUP HANDLERS
+
+  const changeViewStandInflatableSup = () => {
+    props.updateView('Stand-up', 'Inflatable sup');
+  };
+
+  const changeViewStandHardBoards = () => {
+    props.updateView('Stand-up', 'HardBoard');
+  };
+
+  const changeViewStandPaddles = () => {
+    props.updateView('Stand-up', 'Paddles');
+  };
+
+  const changeViewStandAccessories = () => {
+    props.updateView('Stand-up', 'Accessories');
+  };
+
+  const changeViewStandClothing = () => {
+    props.updateView('Stand-up', 'Clothing');
+  };
+
+  //SKATE HANDLERS
+
+  const changeViewSkateboards = () => {
+    props.updateView('Skate', 'Skateboards');
+  };
+  const changeViewSkateDecks = () => {
+    props.updateView('Skate', 'Decks');
+  };
+  const changeViewSkateWheels = () => {
+    props.updateView('Skate', 'Wheels');
+  };
+  const changeViewSkateTrucks = () => {
+    props.updateView('Skate', 'Trucks');
+  };
+  const changeViewSkateGripTape = () => {
+    props.updateView('Skate', 'Grip Tape');
+  };
+  const changeViewSkateAccessories = () => {
+    props.updateView('Skate', 'Accessories');
+  };
+
+  //CLOTHE HANDLERS
+  const changeViewWetsuitsMan = () => {
+    props.updateView('Wetsuits', 'Man');
+  };
+  const changeViewWetsuitsWoman = () => {
+    props.updateView('Wetsuits', 'Woman');
+  };
+  const changeViewWetsuitsJunior = () => {
+    props.updateView('Wetsuits', 'Junior');
   };
 
   return (
@@ -29,12 +104,18 @@ const Navbar = (props) => {
                 Surf
               </Link>
               <div className='dropdown-content'>
-                <Link to='/' onClick={changeView}>
+                <Link to='/' onClick={changeViewSurfBoards}>
                   Boards
                 </Link>
-                <Link to='/'>Fins</Link>
-                <Link to='/'>Wax</Link>
-                <Link to='/'>Accessories</Link>
+                <Link to='/' onClick={changeViewSurfFins}>
+                  Fins
+                </Link>
+                <Link to='/' onClick={changeViewSurfWax}>
+                  Wax
+                </Link>
+                <Link to='/' onClick={changeViewSurfAccessories}>
+                  Accessories
+                </Link>
               </div>
             </li>
             <li className='dropdown'>
@@ -42,8 +123,12 @@ const Navbar = (props) => {
                 Bodyboard
               </Link>
               <div className='dropdown-content'>
-                <Link to='/'>Boards</Link>
-                <Link to='/'>Accessories</Link>
+                <Link to='/' onClick={changeViewBodyboardBoards}>
+                  Boards
+                </Link>
+                <Link to='/' onClick={changeViewBodyboardAccessories}>
+                  Accessories
+                </Link>
               </div>
             </li>
             <li className='dropdown'>
@@ -51,11 +136,21 @@ const Navbar = (props) => {
                 Stand-up
               </Link>
               <div className='dropdown-content'>
-                <Link to='/'>Inflatable Sup</Link>
-                <Link to='/'>Hard Boards</Link>
-                <Link to='/'>Paddles</Link>
-                <Link to='/'>Accessories</Link>
-                <Link to='/'>Clothing</Link>
+                <Link to='/' onClick={changeViewStandInflatableSup}>
+                  Inflatable Sup{' '}
+                </Link>
+                <Link to='/' onClick={changeViewStandHardBoards}>
+                  Hard Boards
+                </Link>
+                <Link to='/' onClick={changeViewStandPaddles}>
+                  Paddles
+                </Link>
+                <Link to='/' onClick={changeViewStandAccessories}>
+                  Accessories
+                </Link>
+                <Link to='/' onClick={changeViewStandClothing}>
+                  Clothing
+                </Link>
               </div>
             </li>
             <li className='dropdown'>
@@ -63,12 +158,24 @@ const Navbar = (props) => {
                 Skate
               </Link>
               <div className='dropdown-content'>
-                <Link to='/'>Skateboards</Link>
-                <Link to='/'>Decks</Link>
-                <Link to='/'>Wheels</Link>
-                <Link to='/'>Trucks</Link>
-                <Link to='/'>Grip Tape</Link>
-                <Link to='/'>Accessories</Link>
+                <Link to='/' onClick={changeViewSkateboards}>
+                  Skateboards
+                </Link>
+                <Link to='/' onClick={changeViewSkateDecks}>
+                  Decks
+                </Link>
+                <Link to='/' onClick={changeViewSkateWheels}>
+                  Wheels
+                </Link>
+                <Link to='/' onClick={changeViewSkateTrucks}>
+                  Trucks
+                </Link>
+                <Link to='/' onClick={changeViewSkateGripTape}>
+                  Grip Tape
+                </Link>
+                <Link to='/' onClick={changeViewSkateAccessories}>
+                  Accessories
+                </Link>
               </div>
             </li>
             <li className='dropdown'>
@@ -76,9 +183,15 @@ const Navbar = (props) => {
                 Wetsuits
               </Link>
               <div className='dropdown-content'>
-                <Link to='/'>Man</Link>
-                <Link to='/'>Woman</Link>
-                <Link to='/'>Junior</Link>
+                <Link to='/' onClick={changeViewWetsuitsMan}>
+                  Man
+                </Link>
+                <Link to='/' onClick={changeViewWetsuitsWoman}>
+                  Woman
+                </Link>
+                <Link to='/' onClick={changeViewWetsuitsJunior}>
+                  Junior
+                </Link>
               </div>
             </li>
             <li>

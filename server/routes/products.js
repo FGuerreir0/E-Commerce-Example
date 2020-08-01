@@ -17,4 +17,18 @@ router.get('/all', (req, res, next) => {
     });
 });
 
+router.post('/category', (req, res, next) => {
+  const { category, subCategory } = req.body;
+  Products.find({ category, subCategory })
+    .sort({ price: 1 })
+    .then((list) => {
+      res.json({
+        products: list
+      });
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+});
+
 module.exports = router;

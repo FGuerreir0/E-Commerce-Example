@@ -19,7 +19,7 @@ class App extends Component {
     this.state = {
       loaded: false,
       user: null,
-      view: 'getAll'
+      view: ['All', 'getAll']
     };
   }
 
@@ -40,8 +40,8 @@ class App extends Component {
     this.setState({ user });
   };
 
-  updateView = (search) => {
-    this.setState({ view: search });
+  updateView = (category, subCategory) => {
+    this.setState({ view: [category, subCategory] });
   };
 
   render() {
@@ -49,10 +49,18 @@ class App extends Component {
     return (
       <div className='App'>
         <BrowserRouter>
-          <Navbar user={this.state.user} updateUser={this.updateUser} />
+          <Navbar
+            user={this.state.user}
+            updateUser={this.updateUser}
+            updateView={this.updateView}
+          />
           <div className='component'>
             <Switch>
-              <Route exact path='/' render={(props) => <Home {...props} />} />
+              <Route
+                exact
+                path='/'
+                render={(props) => <Home {...props} search={this.state.view} />}
+              />
 
               <Route
                 exact

@@ -4,8 +4,11 @@ import Jumbotron from './../../Components/Jumbotron';
 import Filters from './../../Components/Filters';
 
 //SERVICE
-import { getAll } from './../../Services/products';
+import { getAll, getCategory } from './../../Services/products';
+
 import './style.scss';
+let category = 'All';
+let subCategory = 'getAll';
 
 class Home extends Component {
   constructor(props) {
@@ -19,6 +22,10 @@ class Home extends Component {
     this.fetchData();
   }
 
+  componentDidUpdate() {
+    this.searchViewData();
+  }
+
   fetchData() {
     getAll()
       .then((all) => {
@@ -29,6 +36,29 @@ class Home extends Component {
       .catch((error) => {
         console.log(error);
       });
+  }
+
+  searchViewData() {
+    if (category !== this.props.search[0] || subCategory !== this.props.search[1]) {
+      category = this.props.search[0];
+      subCategory = this.props.search[1];
+      console.log(category, subCategory);
+      if (category === 'All') {
+        this.fetchData();
+      } else {
+        getCategory({ category, subCategory })
+          .then((all) => {
+            this.setState({
+              products: [...all]
+            });
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
+    } else {
+      return 'categoria já em vista';
+    }
   }
 
   render() {
